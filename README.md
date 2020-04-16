@@ -16,9 +16,25 @@
   - Geography Data:
     - Downloaded PH Case # Data
       - Used OpenRefine to clean 'Location' column
+        - nearest neighbor, PPM
+      - OHE on other columns
+      - basic data cleaning (training spaces etc)
     - Downloaded DOH C Case Data
       - Used OpenRefine to clean 'Location' column and extract first element (city)
         - Clustering Methods: (https://github.com/OpenRefine/OpenRefine/wiki/Clustering)
           - key collision method, fingerprint function
           - key collision method, metaphone3
-          -
+          - nearest neighbor method, PPM distance function
+
+
+
+## Resources:
+- Geoencoding:
+  - https://towardsdatascience.com/geocode-with-python-161ec1e62b89
+  - https://geopandas.org/geocoding.html
+  - https://geopy.readthedocs.io/en/stable/#installation
+  - https://towardsdatascience.com/reverse-geocoding-in-python-a915acf29eb6
+  - https://colab.research.google.com/github/shakasom/geocoding/blob/master/ReverseGeocoding.ipynb
+  - https://chrisalbon.com/python/data_wrangling/geocoding_and_reverse_geocoding/
+  - https://geopy.readthedocs.io/en/1.10.0/
+  - https://geoffboeing.com/2014/08/reverse-geocode-a-set-of-lat-long-coordinates-to-city-country/
