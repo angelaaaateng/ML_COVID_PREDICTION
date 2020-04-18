@@ -1,0 +1,219 @@
+(base) Lisas-MacBook-Pro-2:project_0 lisacombs$ ls
+Dockerfile		main.py			requirements.txt
+codalab			output			results.json
+data			preds.json		scorer.py
+(base) Lisas-MacBook-Pro-2:project_0 lisacombs$ virtualenv -p python codalabenv
+created virtual environment CPython3.7.3.final.0-64 in 854ms
+  creator CPython3Posix(dest=/Users/lisacombs/Documents/ML/PROJECT/project_0/codalabenv, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/Users/lisacombs/Library/Application Support/virtualenv/seed-app-data/v1)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+(base) Lisas-MacBook-Pro-2:project_0 lisacombs$ . codalabenv/bin/activate
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$  pip install codalab -U
+Processing /Users/lisacombs/Library/Caches/pip/wheels/68/6f/a1/777328bcacb1dc3663836162ba5d2b783cd12088587ac95f26/codalab-0.5.11-py3-none-any.whl
+Requirement already satisfied, skipping upgrade: setuptools>=40.0.0 in ./codalabenv/lib/python3.7/site-packages (from codalab) (46.0.0)
+Collecting argcomplete==1.9.4
+  Using cached argcomplete-1.9.4-py2.py3-none-any.whl (36 kB)
+Collecting docker==3.7.0
+  Using cached docker-3.7.0-py2.py3-none-any.whl (133 kB)
+Processing /Users/lisacombs/Library/Caches/pip/wheels/d7/6f/fc/2fa25e6acfd42c50e4f38e89be45269160c50b919d9aec1eb7/bottle-0.12.9-py3-none-any.whl
+Collecting marshmallow==2.15.1
+  Using cached marshmallow-2.15.1-py2.py3-none-any.whl (43 kB)
+Processing /Users/lisacombs/Library/Caches/pip/wheels/16/4f/26/0777341ab2dc4d05f304bd5f97e7f807a8a5778b7d73bb102a/watchdog-0.8.3-cp37-cp37m-macosx_10_7_x86_64.whl
+Collecting python-dateutil
+  Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Processing /Users/lisacombs/Library/Caches/pip/wheels/88/3c/38/27a51e23a62237b31d8db9256ba32363934a1fcdd3363a1484/fusepy-2.0.4-py3-none-any.whl
+Collecting six==1.11.0
+  Using cached six-1.11.0-py2.py3-none-any.whl (10 kB)
+Processing /Users/lisacombs/Library/Caches/pip/wheels/6c/5d/60/bde2a959be56bca572bd67d49ebd52844d2ef933e85601dfa9/diffimg-0.2.3-py3-none-any.whl
+Processing /Users/lisacombs/Library/Caches/pip/wheels/bd/e6/8a/74cbbc2e5a21d87f366206ea809fad8b77f2f2b7205f8e1c2f/psutil-5.6.6-cp37-cp37m-macosx_10_7_x86_64.whl
+Processing /Users/lisacombs/Library/Caches/pip/wheels/fe/0d/69/cf0c5daf3072bcaeeaaaf2f39198996cb4e9803dc956ded293/marshmallow_jsonapi-0.15.1-py2.py3-none-any.whl
+Collecting selenium==3.141.0
+  Using cached selenium-3.141.0-py2.py3-none-any.whl (904 kB)
+Processing /Users/lisacombs/Library/Caches/pip/wheels/cb/b4/c8/1ae5d5a576b48cf3ea64943280034378cd76055c0f207bc4c1/SQLAlchemy-1.3.0-cp37-cp37m-macosx_10_7_x86_64.whl
+Processing /Users/lisacombs/Library/Caches/pip/wheels/77/f5/10/d00a2bd30928b972790053b5de0c703ca87324f3fead0f2fd9/PyYAML-5.1-cp37-cp37m-macosx_10_7_x86_64.whl
+Collecting requests!=2.18.0,>=2.14.2
+  Using cached requests-2.23.0-py2.py3-none-any.whl (58 kB)
+Collecting websocket-client>=0.32.0
+  Using cached websocket_client-0.57.0-py2.py3-none-any.whl (200 kB)
+Collecting docker-pycreds>=0.4.0
+  Using cached docker_pycreds-0.4.0-py2.py3-none-any.whl (9.0 kB)
+Processing /Users/lisacombs/Library/Caches/pip/wheels/3e/31/09/fa59cef12cdcfecc627b3d24273699f390e71828921b2cbba2/pathtools-0.1.2-py3-none-any.whl
+Collecting argh>=0.24.1
+  Using cached argh-0.26.2-py2.py3-none-any.whl (30 kB)
+Collecting Pillow>=4.3
+  Using cached Pillow-7.1.1-cp37-cp37m-macosx_10_10_x86_64.whl (2.2 MB)
+Collecting urllib3
+  Using cached urllib3-1.25.8-py2.py3-none-any.whl (125 kB)
+Collecting idna<3,>=2.5
+  Using cached idna-2.9-py2.py3-none-any.whl (58 kB)
+Collecting chardet<4,>=3.0.2
+  Using cached chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+Collecting certifi>=2017.4.17
+  Downloading certifi-2020.4.5.1-py2.py3-none-any.whl (157 kB)
+     |████████████████████████████████| 157 kB 1.6 MB/s 
+Installing collected packages: argcomplete, six, idna, chardet, certifi, urllib3, requests, websocket-client, docker-pycreds, docker, bottle, marshmallow, PyYAML, pathtools, argh, watchdog, python-dateutil, fusepy, Pillow, diffimg, psutil, marshmallow-jsonapi, selenium, SQLAlchemy, codalab
+Successfully installed Pillow-7.1.1 PyYAML-5.1 SQLAlchemy-1.3.0 argcomplete-1.9.4 argh-0.26.2 bottle-0.12.9 certifi-2020.4.5.1 chardet-3.0.4 codalab-0.5.11 diffimg-0.2.3 docker-3.7.0 docker-pycreds-0.4.0 fusepy-2.0.4 idna-2.9 marshmallow-2.15.1 marshmallow-jsonapi-0.15.1 pathtools-0.1.2 psutil-5.6.6 python-dateutil-2.8.1 requests-2.23.0 selenium-3.141.0 six-1.11.0 urllib3-1.25.8 watchdog-0.8.3 websocket-client-0.57.0
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cl work
+Currently on worksheet: https://worksheets.codalab.org/worksheets/0xcd1b1a8828594c418ff8b89a95a7d882 (home-lcombs)
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cd ..
+(codalabenv) (base) Lisas-MacBook-Pro-2:PROJECT lisacombs$ ls
+project_0		venv			worksheets-examples
+(codalabenv) (base) Lisas-MacBook-Pro-2:PROJECT lisacombs$ cd worksheets-examples/
+(codalabenv) (base) Lisas-MacBook-Pro-2:worksheets-examples lisacombs$ ls
+00-quickstart	01-nli		README.md
+(codalabenv) (base) Lisas-MacBook-Pro-2:worksheets-examples lisacombs$ cd 00-quickstart/
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ ls
+README.md	code		data		images
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ cd code
+(codalabenv) (base) Lisas-MacBook-Pro-2:code lisacombs$ ls
+sort.py
+(codalabenv) (base) Lisas-MacBook-Pro-2:code lisacombs$ cd ..
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ cd data
+(codalabenv) (base) Lisas-MacBook-Pro-2:data lisacombs$ ls
+lines.txt
+(codalabenv) (base) Lisas-MacBook-Pro-2:data lisacombs$ cd ..
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ ls
+README.md	code		data		images
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ ls
+README.md	code		data		images
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ cl ls
+### Worksheet: https://worksheets.codalab.org::home-lcombs(0xcd1b1a8828594c418ff8b89a95a7d882)
+### Title: <none>
+### Tags: 
+### Owner: lcombs(0x6ec3524330e841df9599a805ad1255db)
+### Permissions: public(0xc573c2):read
+ref  uuid      name        summary  owner   created              data_size  state
+---------------------------------------------------------------------------------
+ ^3  0xdeaf83  data                 lcombs  2020-03-25 12:02:48       4.0k  ready
+ ^2  0x6bd8a7  code                 lcombs  2020-03-25 12:08:40       4.1k  ready
+ ^1  0x7bdf1c  run-python           lcombs  2020-03-25 12:10:16       4.0k  ready
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ cl work lcombs-CLtutorial
+Switched to worksheet: https://worksheets.codalab.org/worksheets/0x7fb20abf50114d38a1d881e05f73d95d (lcombs-CLtutorial)
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ ls
+README.md	code		data		images
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ cl upload data
+Preparing upload archive...
+Uploading data.tar.gz (0x67d7ea3c54b845a4929f1784668925fc) to https://worksheets.codalab.org
+Sent 0.01MiB [0.06MiB/sec]    			
+0x67d7ea3c54b845a4929f1784668925fc
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ cl upload code
+Preparing upload archive...
+Uploading code.tar.gz (0xef7f30c7f74e4c7e8a24a190f90ffcd5) to https://worksheets.codalab.org
+Sent 0.01MiB [0.06MiB/sec]    			
+0xef7f30c7f74e4c7e8a24a190f90ffcd5
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ cl run :data :code 'python code/sort.py < data/lines.txt'
+0xbcf629661aa645d6932b87bee182e7be
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ ls
+README.md	code		data		images
+(codalabenv) (base) Lisas-MacBook-Pro-2:00-quickstart lisacombs$ cd ..
+(codalabenv) (base) Lisas-MacBook-Pro-2:worksheets-examples lisacombs$ ls
+00-quickstart	01-nli		README.md
+(codalabenv) (base) Lisas-MacBook-Pro-2:worksheets-examples lisacombs$ cd ..
+(codalabenv) (base) Lisas-MacBook-Pro-2:PROJECT lisacombs$ l
+-bash: l: command not found
+(codalabenv) (base) Lisas-MacBook-Pro-2:PROJECT lisacombs$ ls
+project_0		venv			worksheets-examples
+(codalabenv) (base) Lisas-MacBook-Pro-2:PROJECT lisacombs$ cd project_0/
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ ls
+Dockerfile		main.py			results.json
+codalab			output			scorer.py
+codalabenv		preds.json
+data			requirements.txt
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ docker build -t lcombs/dsga1003:test04 .
+Sending build context to Docker daemon  77.55MB
+Step 1/6 : FROM ubuntu:16.04
+ ---> 77be327e4b63
+Step 2/6 : RUN apt-get update && apt-get install -y --no-install-recommends          build-essential          locales          cmake          git          curl          vim          unzip          ca-certificates          libjpeg-dev          libpng-dev          libfreetype6-dev          libxft-dev &&     rm -rf /var/lib/apt/lists/*
+ ---> Using cache
+ ---> 71b6f0134200
+Step 3/6 : RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  &&      chmod +x ~/miniconda.sh &&      ~/miniconda.sh -b -p /opt/conda &&      rm ~/miniconda.sh &&      /opt/conda/bin/conda install -y python=3.6 numpy scipy scikit-learn pandas &&      /opt/conda/bin/conda clean -ya
+ ---> Using cache
+ ---> 83bc770d28b1
+Step 4/6 : ENV PATH /opt/conda/bin:$PATH
+ ---> Using cache
+ ---> fff14a58277c
+Step 5/6 : RUN pip install --upgrade pip
+ ---> Using cache
+ ---> b2f79eaaedc9
+Step 6/6 : RUN pip install joblib
+ ---> Using cache
+ ---> 613c79ab89ed
+Successfully built 613c79ab89ed
+Successfully tagged lcombs/dsga1003:test04
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+lcombs/dsga1003     latest              613c79ab89ed        2 weeks ago         1.65GB
+lcombs/dsga1003     test04              613c79ab89ed        2 weeks ago         1.65GB
+ubuntu              16.04               77be327e4b63        6 weeks ago         124MB
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ ls
+Dockerfile		main.py			results.json
+codalab			output			scorer.py
+codalabenv		preds.json
+data			requirements.txt
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cl work lcombs-project0-clean
+Switched to worksheet: https://worksheets.codalab.org/worksheets/0x49a52a8cc3d94b3982f47c9fbc44892c (lcombs-project0-clean)
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cl upload main.py 
+Preparing upload archive...
+Uploading main.py (0x222735750e784939bd6b2369258e740d) to https://worksheets.codalab.org
+Sent 0.00MiB / 0.00MiB (100.0%) [0.01MiB/sec]    			
+0x222735750e784939bd6b2369258e740d
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cl upload scorer.py 
+Preparing upload archive...
+Uploading scorer.py (0x2d820d2588e44606aa2abb43ec75d419) to https://worksheets.codalab.org
+Sent 0.00MiB / 0.00MiB (100.0%) [0.01MiB/sec]    			
+0x2d820d2588e44606aa2abb43ec75d419
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ ls
+Dockerfile		main.py			results.json
+codalab			output			scorer.py
+codalabenv		preds.json
+data			requirements.txt
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cd data
+(codalabenv) (base) Lisas-MacBook-Pro-2:data lisacombs$ ls
+iris
+(codalabenv) (base) Lisas-MacBook-Pro-2:data lisacombs$ cd iris
+(codalabenv) (base) Lisas-MacBook-Pro-2:iris lisacombs$ ls
+dev.csv		train.csv
+(codalabenv) (base) Lisas-MacBook-Pro-2:iris lisacombs$ cd ..
+(codalabenv) (base) Lisas-MacBook-Pro-2:data lisacombs$ cd ..
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ ls
+Dockerfile		main.py			results.json
+codalab			output			scorer.py
+codalabenv		preds.json
+data			requirements.txt
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cl upload data
+Preparing upload archive...
+Uploading data.tar.gz (0xebcd773e52cf4137a747f180218cb1f0) to https://worksheets.codalab.org
+Sent 0.01MiB [0.07MiB/sec]    			
+0xebcd773e52cf4137a747f180218cb1f0
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cl run :main.py train-data:data/iris/train.csv test-data:data/iris/dev.csv 'python main.py --train-data train-data --test-data test-data --output-dir output' --request-docker-image lcombs/dsga1003
+0x4745f28d85df4f6cb470c26712501f4b
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cl ls
+### Worksheet: https://worksheets.codalab.org::lcombs-project0-clean(0x49a52a8cc3d94b3982f47c9fbc44892c)
+### Title: lcombs-project0-clean
+### Tags: 
+### Owner: lcombs(0x6ec3524330e841df9599a805ad1255db)
+### Permissions: public(0xc573c2):read
+ref  uuid      name        summary  owner   created              data_size  state    
+-------------------------------------------------------------------------------------
+ ^4  0x222735  main.py              lcombs  2020-04-08 11:39:04       2.1k  ready    
+ ^3  0x2d820d  scorer.py            lcombs  2020-04-08 11:39:13        914  ready    
+ ^2  0xebcd77  data                 lcombs  2020-04-08 11:40:48      18.9k  ready    
+ ^1  0x4745f2  run-python           lcombs  2020-04-08 11:47:08             preparing
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cl run :main.py test-data:data/iris/dev.csv model:train/output 'python main.py --test-data test-data --model-dir model --test' --request-docker-image lcombs/dsga1003
+0x818523613783418f80402d88a0cc6418
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cl ls
+### Worksheet: https://worksheets.codalab.org::lcombs-project0-clean(0x49a52a8cc3d94b3982f47c9fbc44892c)
+### Title: lcombs-project0-clean
+### Tags: 
+### Owner: lcombs(0x6ec3524330e841df9599a805ad1255db)
+### Permissions: public(0xc573c2):read
+ref  uuid      name        summary  owner   created              data_size  state
+---------------------------------------------------------------------------------
+ ^5  0x222735  main.py              lcombs  2020-04-08 11:39:04       2.1k  ready
+ ^4  0x2d820d  scorer.py            lcombs  2020-04-08 11:39:13        914  ready
+ ^3  0xebcd77  data                 lcombs  2020-04-08 11:40:48      18.9k  ready
+ ^2  0x4745f2  train                lcombs  2020-04-08 11:47:08      12.4k  ready
+ ^1  0x818523  prediction           lcombs  2020-04-08 12:06:30       4.9k  ready
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ cl run :scorer.py test-data:data/iris/dev.csv pred:prediction/preds.json 'python scorer.py --test-data test-data --pred-json pred' --request-docker-image lcombs/dsga1003 --name eval
+0x9cb408c1863244079b301d6d39c6bd6d
+(codalabenv) (base) Lisas-MacBook-Pro-2:project_0 lisacombs$ 
