@@ -76,12 +76,14 @@ Formal Instructions:
 		- $ cl run :main.py test-data:data/iris/dev.csv model:train/output 'python main.py --test-data test-data --model-dir model --test' --request-docker-image lcombs/dsga1003 -name prediction
 			- View: This contains preds.json
 		- $ cl run :scorer.py test-data:data/iris/dev.csv pred:prediction/preds.json 'python scorer.py --test-data test-data --pred-json pred' --request-docker-image lcombs/dsga1003 --name eval
-	- Online results:
+	- Online results: 
+	![online results](online-results.png)
 	- Clean the Rmd file so that others can understand the bundle:
 		- "Edit Source" using markdown syntax: 
 			- i.e. ## Data
 			- Show results from json:
-
+			![json output](json-output.png)
+		```	
 		## Data:
 		[dataset data]{0xebcd773e52cf4137a747f180218cb1f0}
 
@@ -101,7 +103,7 @@ Formal Instructions:
 		% add acc /results.json:acc
 		% display table result
 		[run eval -- :scorer.py,test-data:data/iris/dev.csv,pred:prediction/preds.json : python scorer.py --test-data test-data --pred-json pred]{0x9cb408c1863244079b301d6d39c6bd6d}
-		
+		```
 - Additional notes: 
 	- We can use codalab to display the different experiments we ran (i.e. if we want to run different hyper-parameters or model methods) and show their accuracies.
 	- We do not need to "submit" on codalab since there will be no competition, but the professor will use the codalab link as extra credit since it makes it easier to make reproducible results via docker and codalab workflow across different data scientists and machines.
